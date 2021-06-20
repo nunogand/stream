@@ -1,293 +1,77 @@
 ---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+layout:
 ---
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
 
-<!DOCTYPE html>
+<style>
+	@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif !important;
+}
+</style>
+
+<div class="container my-5">
+	<div class="border-bottom pb-3 px-2 d-flex justify-content-between">
+	  <div class="d-flex align-items-center">
+		<svg height="30px" class="mr-2" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	   viewBox="0 0 495 495" style="enable-background:new 0 0 495 495;" xml:space="preserve">
+  <g>
+	  <path d="M495,103.513V95.5c0-21.78-17.72-39.5-39.5-39.5h-416C17.72,56,0,73.72,0,95.5v303.997c0,0.003,0,0.005,0,0.008
+		  C0.003,421.283,17.722,439,39.5,439h416c21.78,0,39.5-17.72,39.5-39.5V103.521C495,103.518,495,103.516,495,103.513z M39.5,71h416
+		  c13.509,0,24.5,10.99,24.5,24.5v4.883c-35.121,34.963-92.85,92.464-140.721,140.289l-75.162-75.162
+		  c-9.162-9.162-24.071-9.162-33.233,0L15,381.393V95.5C15,81.99,25.991,71,39.5,71z M455.5,424h-416
+		  c-12.519,0-22.868-9.439-24.319-21.574L241.49,176.117c3.314-3.314,8.706-3.314,12.021,0l75.158,75.158
+		  C289.26,290.67,258.813,321.249,257.5,323c-2.485,3.313-1.814,8.015,1.5,10.5c1.349,1.012,2.928,1.5,4.494,1.5
+		  c2.187,0,4.349-0.953,5.822-2.764C275.075,325.77,412.962,188.308,480,121.551V399.5C480,413.01,469.009,424,455.5,424z"/>
+	  <path d="M103.5,199c21.78,0,39.5-17.72,39.5-39.5S125.28,120,103.5,120S64,137.72,64,159.5S81.72,199,103.5,199z M103.5,135
+		  c13.509,0,24.5,10.99,24.5,24.5S117.009,184,103.5,184S79,173.01,79,159.5S89.991,135,103.5,135z"/>
+  </g>
+		</svg>
+		<a href="/index.html" style="color: #9B5DE5; font-size: 20px;" class="text-capitalize font-weight-bold mb-0">Photorama</a>
+	  </div>
+	  <a href="/index.html" class="text-dark">Voltar</a>
+	</div>
+	<div class="row">
+		{% for post in site.posts %}
+	  <div class="col-md-4 p-4">
+		<div style="box-shadow: 0 0  20px #ddd;">
+		  <div class="position-relative" style="height: 320px; background-image: url('/assets/{{ post.folder }}/trilho.jpg'); background-position: center; background-size: cover;">
+			<div class="position-absolute px-3 py-4" style="background: rgba(0, 0, 0, .5); right: 0; bottom: 0; left: 0;">
+			  <h3 class="h6"><a href="{{post.url}}" class="text-white" style="line-height: 1.6;">{{post.title}}</a></h3>
+			  <div class="mt-2 d-flex justify-content-between">
+				<!--
+				LINKAR aqui TAGS
+				<a href="{{ post.url }}" class="pl-2 text-white" style="border-left: 3px solid #9B5DE5;"><small>Travel</small></a>
+				-->
+				<a href="#" class="pl-2 text-white" style="border-left: 3px solid #9B5DE5;"><small>nunogand</small></a>
+			  </div>
+			</div>
+		  </div>
+		  <div class="p-3">
+			<div class="d-flex align-items-center mr-4">
+			  <svg height="16px" class="mr-2" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				viewBox="0 0 300.988 300.988" style="enable-background:new 0 0 300.988 300.988;" xml:space="preserve">
+			  <g>
+				<g>
+				  <path d="M150.494,0.001C67.511,0.001,0,67.512,0,150.495s67.511,150.493,150.494,150.493s150.494-67.511,150.494-150.493
+					S233.476,0.001,150.494,0.001z M150.494,285.987C75.782,285.987,15,225.206,15,150.495S75.782,15.001,150.494,15.001
+					s135.494,60.782,135.494,135.493S225.205,285.987,150.494,285.987z"/>
+				  <polygon points="142.994,142.995 83.148,142.995 83.148,157.995 157.994,157.995 157.994,43.883 142.994,43.883 		"/>
+				</g>
+			  </svg>
+			  <small class="mt-1" style="color: #9B5DE5;">{{ post.date | date: '%B %d, %Y' }}</small>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	  {% endfor %}
+
+	</div>
+</div>
 
 
 
-<head>
-    <style>
-        .slideshow {
-            position: absolute;
-            width: 100vw;
-            height: 100vh;
-            overflow: hidden;
-        }
-        
-        .slideshow-image {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: no-repeat 50% 50%;
-            background-size: cover;
-            -webkit-animation-name: kenburns;
-            animation-name: kenburns;
-            -webkit-animation-timing-function: linear;
-            animation-timing-function: linear;
-            -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
-            -webkit-animation-duration: 16s;
-            animation-duration: 16s;
-            opacity: 1;
-            transform: scale(1.2);
-        }
-        
-        .slideshow-image:nth-child(1) {
-            -webkit-animation-name: kenburns-1;
-            animation-name: kenburns-1;
-            z-index: 3;
-        }
-        
-        .slideshow-image:nth-child(2) {
-            -webkit-animation-name: kenburns-2;
-            animation-name: kenburns-2;
-            z-index: 2;
-        }
-        
-        .slideshow-image:nth-child(3) {
-            -webkit-animation-name: kenburns-3;
-            animation-name: kenburns-3;
-            z-index: 1;
-        }
-        
-        .slideshow-image:nth-child(4) {
-            -webkit-animation-name: kenburns-4;
-            animation-name: kenburns-4;
-            z-index: 0;
-        }
-        
-        @-webkit-keyframes kenburns-1 {
-            0% {
-                opacity: 1;
-                transform: scale(1.2);
-            }
-            1.5625% {
-                opacity: 1;
-            }
-            23.4375% {
-                opacity: 1;
-            }
-            26.5625% {
-                opacity: 0;
-                transform: scale(1);
-            }
-            100% {
-                opacity: 0;
-                transform: scale(1.2);
-            }
-            98.4375% {
-                opacity: 0;
-                transform: scale(1.2117647059);
-            }
-            100% {
-                opacity: 1;
-            }
-        }
-        
-        @keyframes kenburns-1 {
-            0% {
-                opacity: 1;
-                transform: scale(1.2);
-            }
-            1.5625% {
-                opacity: 1;
-            }
-            23.4375% {
-                opacity: 1;
-            }
-            26.5625% {
-                opacity: 0;
-                transform: scale(1);
-            }
-            100% {
-                opacity: 0;
-                transform: scale(1.2);
-            }
-            98.4375% {
-                opacity: 0;
-                transform: scale(1.2117647059);
-            }
-            100% {
-                opacity: 1;
-            }
-        }
-        
-        @-webkit-keyframes kenburns-2 {
-            23.4375% {
-                opacity: 1;
-                transform: scale(1.2);
-            }
-            26.5625% {
-                opacity: 1;
-            }
-            48.4375% {
-                opacity: 1;
-            }
-            51.5625% {
-                opacity: 0;
-                transform: scale(1);
-            }
-            100% {
-                opacity: 0;
-                transform: scale(1.2);
-            }
-        }
-        
-        @keyframes kenburns-2 {
-            23.4375% {
-                opacity: 1;
-                transform: scale(1.2);
-            }
-            26.5625% {
-                opacity: 1;
-            }
-            48.4375% {
-                opacity: 1;
-            }
-            51.5625% {
-                opacity: 0;
-                transform: scale(1);
-            }
-            100% {
-                opacity: 0;
-                transform: scale(1.2);
-            }
-        }
-        
-        @-webkit-keyframes kenburns-3 {
-            48.4375% {
-                opacity: 1;
-                transform: scale(1.2);
-            }
-            51.5625% {
-                opacity: 1;
-            }
-            73.4375% {
-                opacity: 1;
-            }
-            76.5625% {
-                opacity: 0;
-                transform: scale(1);
-            }
-            100% {
-                opacity: 0;
-                transform: scale(1.2);
-            }
-        }
-        
-        @keyframes kenburns-3 {
-            48.4375% {
-                opacity: 1;
-                transform: scale(1.2);
-            }
-            51.5625% {
-                opacity: 1;
-            }
-            73.4375% {
-                opacity: 1;
-            }
-            76.5625% {
-                opacity: 0;
-                transform: scale(1);
-            }
-            100% {
-                opacity: 0;
-                transform: scale(1.2);
-            }
-        }
-        
-        @-webkit-keyframes kenburns-4 {
-            73.4375% {
-                opacity: 1;
-                transform: scale(1.2);
-            }
-            76.5625% {
-                opacity: 1;
-            }
-            98.4375% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-                transform: scale(1);
-            }
-        }
-        
-        @keyframes kenburns-4 {
-            73.4375% {
-                opacity: 1;
-                transform: scale(1.2);
-            }
-            76.5625% {
-                opacity: 1;
-            }
-            98.4375% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-                transform: scale(1);
-            }
-        }
-        
-        h1 {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate3d(-50%, -50%, 0);
-            z-index: 99;
-            text-align: center;
-            font-family: Raleway, sans-serif;
-            font-weight: 300;
-            text-transform: uppercase;
-            background-color: rgba(255, 255, 255, 0.75);
-            box-shadow: 0 1em 2em -1em rgba(0, 0, 0, 0.5);
-            padding: 1em 2em;
-            line-height: 1.5;
-        }
-        
-        h1 small {
-            display: block;
-            text-transform: lowercase;
-            font-size: 0.7em;
-        }
-        
-        h1 small:first-child {
-            border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-            padding-bottom: 0.5em;
-        }
-        
-        h1 small:last-child {
-            border-top: 1px solid rgba(0, 0, 0, 0.25);
-            padding-top: 0.5em;
-        }
-        body {
-            margin: 0;
-        }
-    </style>
-</head>
-
-<body>
-{%include nav_index2.html%}
-
-    <!-- init the list -->
-    {% assign headers = "" | split: ',' %}
-
-    <!-- loop and add -->
-    {% for image in site.static_files %} {% if image.path contains '/assets/front/' %}
-    <!-- add image -->
-    {% assign headers = headers | push: image.path %} {% endif %} {% endfor %} 
-    
-      
-    {% assign random-header = headers | sample: 4 %} 
-    
-       
-
-    <div class="slideshow">
-        <div class="slideshow-image" style="background-image: url('{{ random-header[0] }}')"></div>
-        <div class="slideshow-image" style="background-image: url('{{ random-header[1] }}')"></div>
-        <div class="slideshow-image" style="background-image: url('{{ random-header[2] }}')"></div>
-        <div class="slideshow-image" style="background-image: url('{{ random-header[3] }}')"></div>
-    </div>
-
-</body>
