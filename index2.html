@@ -37,17 +37,31 @@ body {
 	</div>
 	<div class="row">
 		{% for post in site.posts %}
-	  <div class="col-md-4 p-4">
+	  <div class="col-sm-4 p-4">
 		<div style="box-shadow: 0 0  20px #ddd;">
 		  <div class="position-relative" style="height: 320px; background-image: url('/assets/{{ post.folder }}/trilho.jpg'); background-position: center; background-size: cover;">
 			<div class="position-absolute px-3 py-4" style="background: rgba(0, 0, 0, .5); right: 0; bottom: 0; left: 0;">
 			  <h3 class="h6"><a href="{{post.url}}" class="text-white" style="line-height: 1.6;">{{post.title}}</a></h3>
 			  <div class="mt-2 d-flex justify-content-between">
+				<small class="pl-2 text-white" style="border-left: 3px solid #9B5DE5;">
+					{% assign counter = 0 %}
+					{% for file in site.static_files %}
+					
+					{% if file.path contains post.folder %}
+					{% assign counter = counter | plus: 1 %}
+					{% endif %}
+						 
+				  {% endfor %}
+				  {{counter}} fotos.
+				</small>
+					
+				  
 				<!--
 				LINKAR aqui TAGS
 				<a href="{{ post.url }}" class="pl-2 text-white" style="border-left: 3px solid #9B5DE5;"><small>Travel</small></a>
-				-->
+				
 				<a href="#" class="pl-2 text-white" style="border-left: 3px solid #9B5DE5;"><small>nunogand</small></a>
+			-->
 			  </div>
 			</div>
 		  </div>
@@ -64,8 +78,8 @@ body {
 				</g>
 			  </svg>
 			  <small class="mt-1" style="color: #9B5DE5;">
-				{% assign m = page.date | date: "%-m" %}
-				{{ page.date | date: "%-d" }}
+				{% assign m = post.date | date: "%-m" %}
+				{{ post.date | date: "%-d" }}
 		  {% case m %}
 			{% when '1' %}Janeiro
 			{% when '2' %}Fevereiro
@@ -80,7 +94,9 @@ body {
 			{% when '11' %}Novembro
 			{% when '12' %}Dezembro
 		  {% endcase %}
-		  {{ page.date | date: "%Y" }}
+		  {{ post.date | date: "%Y" }}
+
+		 
 			  </small>
 			</div>
 		  </div>
