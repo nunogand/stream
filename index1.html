@@ -5,6 +5,10 @@
 layout:
 ---
 <style>
+
+<style>
+
+
 	/* posts.html */
 	.project-container {
 		max-width: 750px;
@@ -96,8 +100,8 @@ layout:
 
 </style>
 
-
-
+{%include top-nav.html%}
+<!--
 <div>
 	<svg height="30px" class="mr-2" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
    viewBox="0 0 495 495" style="enable-background:new 0 0 495 495;" xml:space="preserve">
@@ -115,12 +119,10 @@ layout:
 	</svg>
 	<a href="/index.html" style="color: #9B5DE5; font-size: 20px;" class="text-capitalize font-weight-bold mb-0">Photorama</a>
 </div>
+-->
 <section>
 	<div class="project-container">
 	  {% for post in site.posts %}
-
-
-
 
 
 		<a href="{{ post.url }}">
@@ -139,4 +141,4 @@ layout:
   </section>
 
   
- 
+{%include top-nav-scripts.html%}

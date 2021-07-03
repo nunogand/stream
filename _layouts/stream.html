@@ -235,7 +235,7 @@ h2 {
     
   </style>
 
-<section id="demo" class="gpx" data-gpx-source="{{site.baseurl}}/{{page.folder}}/track.gpx" data-map-target="demo-map">
+<section id="demo" class="gpx" data-gpx-source="/assets/{{page.folder}}/track.gpx" data-map-target="demo-map">
   <header>
     <h3>Loading...</h3>
     <span class="start"></span>
@@ -289,7 +289,8 @@ h2 {
 		</script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.5.1/gpx.js"></script>
+   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.5.1/gpx.js"></script>-->
+   <script src="/assets/js/gpx.js"></script>
     <script type="application/javascript">
       function display_gpx(elt) {
         if (!elt) return;
@@ -311,9 +312,9 @@ h2 {
         new L.GPX(url, {
           async: true,
           marker_options: {
-            startIconUrl: 'https://mpetazzoni.github.io/leaflet-gpx/pin-icon-start.png',
-            endIconUrl:   'https://mpetazzoni.github.io/leaflet-gpx/pin-icon-end.png',
-            shadowUrl:    'https://mpetazzoni.github.io/leaflet-gpx/pin-shadow.png',
+            startIconUrl: '/assets/map-icons/pin-icon-start.png',
+            endIconUrl:   '/assets/map-icons/pin-icon-end.png',
+            shadowUrl:    '/assets/map-icons/pin-shadow.png',
           },
         }).on('loaded', function(e) {
           var gpx = e.target;
