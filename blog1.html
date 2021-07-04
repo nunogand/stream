@@ -31,7 +31,11 @@ html, body {
 	margin: 0;
 	font-size: 16px;
 	font-family: sans-serif;
-}
+	/*nevagacao*/
+	margin-top: 40px;
+	}
+
+
 
 .card-list {
 	display: block;
@@ -40,6 +44,7 @@ html, body {
 	font-size: 0;
 	text-align: center;
 	list-style: none;
+	
 }
 
 .card {
@@ -79,9 +84,7 @@ html, body {
 
 
 
-
-
-
+{%include navegacao.html%}
 
 <ul class="card-list">
 	
@@ -115,6 +118,131 @@ html, body {
 		</a>
 	</li>
 	
+
+
+
+	<li class="card">
+		<a class="card-image" href="{{post.url}}" style="background-image: url('/assets/{{ post.folder }}/trilho.jpg');" data-image-full="/assets/{{ post.folder }}/trilho.jpg">
+			<img src="/assets/{{ post.folder }}/trilho.jpg" alt="{{post.title}}" />
+		</a>
+		<a class="card-description" href="{{post.url}}" target="_blank">
+			<h2>{{post.title}}</h2>
+
+
+            <small>
+            {% assign counter = 0 %}
+                {% for file in site.static_files %}
+                
+                {% if file.path contains post.folder %}
+                {% if file.extname == '.jpg' or 
+  file.extname == '.jpeg' or 
+  file.extname == '.JPG' or 
+  file.extname == '.JPEG' %}
+                {% assign counter = counter | plus: 1 %}
+                {% endif %}{% endif %}
+                     
+              {% endfor %}
+              
+			<p>{{counter}} fotos.</p></small>
+		</a>
+	</li><li class="card">
+		<a class="card-image" href="{{post.url}}" style="background-image: url('/assets/{{ post.folder }}/trilho.jpg');" data-image-full="/assets/{{ post.folder }}/trilho.jpg">
+			<img src="/assets/{{ post.folder }}/trilho.jpg" alt="{{post.title}}" />
+		</a>
+		<a class="card-description" href="{{post.url}}" target="_blank">
+			<h2>{{post.title}}</h2>
+
+
+            <small>
+            {% assign counter = 0 %}
+                {% for file in site.static_files %}
+                
+                {% if file.path contains post.folder %}
+                {% if file.extname == '.jpg' or 
+  file.extname == '.jpeg' or 
+  file.extname == '.JPG' or 
+  file.extname == '.JPEG' %}
+                {% assign counter = counter | plus: 1 %}
+                {% endif %}{% endif %}
+                     
+              {% endfor %}
+              
+			<p>{{counter}} fotos.</p></small>
+		</a>
+	</li><li class="card">
+		<a class="card-image" href="{{post.url}}" style="background-image: url('/assets/{{ post.folder }}/trilho.jpg');" data-image-full="/assets/{{ post.folder }}/trilho.jpg">
+			<img src="/assets/{{ post.folder }}/trilho.jpg" alt="{{post.title}}" />
+		</a>
+		<a class="card-description" href="{{post.url}}" target="_blank">
+			<h2>{{post.title}}</h2>
+
+
+            <small>
+            {% assign counter = 0 %}
+                {% for file in site.static_files %}
+                
+                {% if file.path contains post.folder %}
+                {% if file.extname == '.jpg' or 
+  file.extname == '.jpeg' or 
+  file.extname == '.JPG' or 
+  file.extname == '.JPEG' %}
+                {% assign counter = counter | plus: 1 %}
+                {% endif %}{% endif %}
+                     
+              {% endfor %}
+              
+			<p>{{counter}} fotos.</p></small>
+		</a>
+	</li><li class="card">
+		<a class="card-image" href="{{post.url}}" style="background-image: url('/assets/{{ post.folder }}/trilho.jpg');" data-image-full="/assets/{{ post.folder }}/trilho.jpg">
+			<img src="/assets/{{ post.folder }}/trilho.jpg" alt="{{post.title}}" />
+		</a>
+		<a class="card-description" href="{{post.url}}" target="_blank">
+			<h2>{{post.title}}</h2>
+
+
+            <small>
+            {% assign counter = 0 %}
+                {% for file in site.static_files %}
+                
+                {% if file.path contains post.folder %}
+                {% if file.extname == '.jpg' or 
+  file.extname == '.jpeg' or 
+  file.extname == '.JPG' or 
+  file.extname == '.JPEG' %}
+                {% assign counter = counter | plus: 1 %}
+                {% endif %}{% endif %}
+                     
+              {% endfor %}
+              
+			<p>{{counter}} fotos.</p></small>
+		</a>
+	</li><li class="card">
+		<a class="card-image" href="{{post.url}}" style="background-image: url('/assets/{{ post.folder }}/trilho.jpg');" data-image-full="/assets/{{ post.folder }}/trilho.jpg">
+			<img src="/assets/{{ post.folder }}/trilho.jpg" alt="{{post.title}}" />
+		</a>
+		<a class="card-description" href="{{post.url}}" target="_blank">
+			<h2>{{post.title}}</h2>
+
+
+            <small>
+            {% assign counter = 0 %}
+                {% for file in site.static_files %}
+                
+                {% if file.path contains post.folder %}
+                {% if file.extname == '.jpg' or 
+  file.extname == '.jpeg' or 
+  file.extname == '.JPG' or 
+  file.extname == '.JPEG' %}
+                {% assign counter = counter | plus: 1 %}
+                {% endif %}{% endif %}
+                     
+              {% endfor %}
+              
+			<p>{{counter}} fotos.</p></small>
+		</a>
+	</li>
+
 
 {% endfor %}
 	
@@ -156,3 +284,4 @@ function lazyLoad() {
 }
 
 </script>
+{%include top-nav-scripts.html%}
