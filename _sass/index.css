@@ -1,0 +1,18 @@
+body {
+    margin: 0;
+     }
+
+.titulo {
+bottom: 5%;
+right: 5%;
+position: absolute;
+font-size: 2em;
+font-weight: bold;
+color: rgb(64,64,64);
+background-color: rgba(255, 255, 255, 0.75);
+border-radius: 10px;
+z-index: 99;
+background-color: rgba(255, 255, 255, 0.75); 
+padding: 0.5em;
+border-radius: 10px;
+}
