@@ -80,12 +80,39 @@ html, body {
 }
 </style>
 
+<style>
+h1 {
+  font-family: Rockwell, Georgia, sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;
+  
+  padding: 0 .5em;
+  max-width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  font-size: 2em;
+  color: #9B5DE5;
+  
+  letter-spacing: .1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media all and (min-width:600px) {
+  h1 {
+    font-size: 5vw;
+  }
+}
+
+</style>
+
 
 
 
 
 {%include navegacao.html%}
-
+<h1>Trilhos</h1>
 <ul class="card-list">
 	
     {% for post in site.posts %}
@@ -125,6 +152,7 @@ html, body {
 		<a class="card-image" href="{{post.url}}" style="background-image: url('/assets/{{ post.folder }}/trilho.jpg');" data-image-full="/assets/{{ post.folder }}/trilho.jpg">
 			<img src="/assets/{{ post.folder }}/trilho.jpg" alt="{{post.title}}" />
 		</a>
+		<div class="teste">
 		<a class="card-description" href="{{post.url}}" target="_blank">
 			<h2>{{post.title}}</h2>
 
@@ -145,6 +173,7 @@ html, body {
               
 			<p>{{counter}} fotos.</p></small>
 		</a>
+	</div>
 	</li><li class="card">
 		<a class="card-image" href="{{post.url}}" style="background-image: url('/assets/{{ post.folder }}/trilho.jpg');" data-image-full="/assets/{{ post.folder }}/trilho.jpg">
 			<img src="/assets/{{ post.folder }}/trilho.jpg" alt="{{post.title}}" />

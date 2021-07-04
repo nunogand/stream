@@ -7,41 +7,158 @@ layout:
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
 
 <style>
+	/* Font */
+  @import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
+  
+  /* Design */
+  *,
+  *::before,
+  *::after {
+	box-sizing: border-box;
+  }
+  
+  html {
+	background-color: #ecf9ff;
+  }
+  
+  body {
+	color: #272727;
+	font-family: 'Quicksand', serif;
+	font-style: normal;
+	font-weight: 400;
+	letter-spacing: 0;
+	padding: 1rem;
+  }
+  
+  .main{
+	max-width: 1200px;
+	margin: 0 auto;
+  }
+  
+  h1 {
+	  font-size: 24px;
+	  font-weight: 400;
+	  text-align: center;
+  }
+  
+  img {
+	height: auto;
+	max-width: 100%;
+	vertical-align: middle;
+  }
+  
+  .btn {
+	color: #ffffff;
+	padding: 0.8rem;
+	font-size: 14px;
+	text-transform: uppercase;
+	border-radius: 4px;
+	font-weight: 400;
+	display: block;
+	width: 100%;
+	cursor: pointer;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	background: transparent;
+  }
+  
+  .btn:hover {
+	background-color: rgba(255, 255, 255, 0.12);
+  }
+  
+  .cards {
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+  }
+  
+  .cards_item {
+	display: flex;
+	padding: 1rem;
+  }
+  
+  @media (min-width: 40rem) {
+	.cards_item {
+	  width: 50%;
+	}
+  }
+  
+  @media (min-width: 56rem) {
+	.cards_item {
+	  width: 33.3333%;
+	}
+  }
+  
+  .card {
+	background-color: white;
+	border-radius: 0.25rem;
+	box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+  }
+  
+  .card_content {
+	padding: 1rem;
+	background: linear-gradient(to bottom left, #EF8D9C 40%, #FFC39E 100%);
+  }
+  
+  .card_title {
+	color: #ffffff;
+	font-size: 1.1rem;
+	font-weight: 700;
+	letter-spacing: 1px;
+	text-transform: capitalize;
+	margin: 0px;
+  }
+  
+  .card_text {
+	color: #ffffff;
+	font-size: 0.875rem;
+	line-height: 1.5;
+	margin-bottom: 1.25rem;    
+	font-weight: 400;
+  }
+  .made_by{
+	font-weight: 400;
+	font-size: 13px;
+	margin-top: 35px;
+	text-align: center;
+  }
+  </style>
+
+
+
+<style>
 	@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
 
 body {
   font-family: "Poppins", sans-serif !important;
 }
 </style>
+{%include navegacao.html%}
 
-<div class="container my-5">
-	<div class="border-bottom pb-3 px-2 d-flex justify-content-between">
-	  <div class="d-flex align-items-center">
-		<svg height="30px" class="mr-2" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	   viewBox="0 0 495 495" style="enable-background:new 0 0 495 495;" xml:space="preserve">
-  <g>
-	  <path d="M495,103.513V95.5c0-21.78-17.72-39.5-39.5-39.5h-416C17.72,56,0,73.72,0,95.5v303.997c0,0.003,0,0.005,0,0.008
-		  C0.003,421.283,17.722,439,39.5,439h416c21.78,0,39.5-17.72,39.5-39.5V103.521C495,103.518,495,103.516,495,103.513z M39.5,71h416
-		  c13.509,0,24.5,10.99,24.5,24.5v4.883c-35.121,34.963-92.85,92.464-140.721,140.289l-75.162-75.162
-		  c-9.162-9.162-24.071-9.162-33.233,0L15,381.393V95.5C15,81.99,25.991,71,39.5,71z M455.5,424h-416
-		  c-12.519,0-22.868-9.439-24.319-21.574L241.49,176.117c3.314-3.314,8.706-3.314,12.021,0l75.158,75.158
-		  C289.26,290.67,258.813,321.249,257.5,323c-2.485,3.313-1.814,8.015,1.5,10.5c1.349,1.012,2.928,1.5,4.494,1.5
-		  c2.187,0,4.349-0.953,5.822-2.764C275.075,325.77,412.962,188.308,480,121.551V399.5C480,413.01,469.009,424,455.5,424z"/>
-	  <path d="M103.5,199c21.78,0,39.5-17.72,39.5-39.5S125.28,120,103.5,120S64,137.72,64,159.5S81.72,199,103.5,199z M103.5,135
-		  c13.509,0,24.5,10.99,24.5,24.5S117.009,184,103.5,184S79,173.01,79,159.5S89.991,135,103.5,135z"/>
-  </g>
-		</svg>
-		<a href="/index.html" style="color: #9B5DE5; font-size: 20px;" class="text-capitalize font-weight-bold mb-0">Photorama</a>
-	  </div>
-	  <a href="/index.html" class="text-dark">Voltar</a>
-	</div>
-	<div class="row">
-		{% for post in site.posts %}
-	  {%include tab-post.html %}
+
+<ul class="cards">
+	{% for post in site.posts %}
+	  {%include tab-post2.html %}
 	  {% endfor %}
 
-	</div>
-</div>
+	  {% for post in site.posts %}
+	  {%include tab-post2.html %}
+	  {% endfor %}{% for post in site.posts %}
+	  {%include tab-post2.html %}
+	  {% endfor %}{% for post in site.posts %}
+	  {%include tab-post2.html %}
+	  {% endfor %}{% for post in site.posts %}
+	  {%include tab-post2.html %}
+	  {% endfor %}{% for post in site.posts %}
+	  {%include tab-post2.html %}
+	  {% endfor %}
+
+
+	</ul>
 
 
 

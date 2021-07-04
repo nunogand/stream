@@ -1,0 +1,46 @@
+
+
+
+  <li class="cards_item">
+    <div class="card">
+      <div class="card_image"><img src="/assets/{{ post.folder }}/trilho.jpg"></div>
+      <div class="card_content">
+        <h2 class="card_title">{{post.title}}</h2>
+        <p class="card_text">
+          {% assign m = post.date | date: "%-m" %}
+            {{ post.date | date: "%-d" }}
+      {% case m %}
+        {% when '1' %}Janeiro
+        {% when '2' %}Fevereiro
+        {% when '3' %}Março
+        {% when '4' %}Abril
+        {% when '5' %}Maio
+        {% when '6' %}Junho
+        {% when '7' %}Julho
+        {% when '8' %}Agosto
+        {% when '9' %}Setembro
+        {% when '10' %}Outubro
+        {% when '11' %}Novembro
+        {% when '12' %}Dezembro
+      {% endcase %}
+      {{ post.date | date: "%Y" }}</p>
+        <a href="{{post.url}}"><button class="btn card_btn">{% assign counter = 0 %}
+          {% for file in site.static_files %}
+          
+          {% if file.path contains post.folder %}
+          {% if file.extname == '.jpg' or 
+file.extname == '.jpeg' or 
+file.extname == '.JPG' or 
+file.extname == '.JPEG' %}
+          {% assign counter = counter | plus: 1 %}
+          {% endif %}{% endif %}
+               
+        {% endfor %}
+        {{counter}} fotos.</button></div></a>
+      </div>
+    </div>
+  </li>
+
+
+
+
