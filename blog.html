@@ -17,9 +17,7 @@ layout:
 	box-sizing: border-box;
   }
   
-  html {
-	background-color: #ecf9ff;
-  }
+
   
   body {
 	color: #272727;
@@ -28,6 +26,7 @@ layout:
 	font-weight: 400;
 	letter-spacing: 0;
 	padding: 1rem;
+	margin-top: 40px;
   }
   
   .main{
@@ -72,7 +71,16 @@ layout:
 	margin: 0;
 	padding: 0;
   }
-  
+
+  /*THE CROP PART*/
+.card_image {
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  position: relative;
+  object-fit: scale-down;
+   }
+/* END CROP */
+
   .cards_item {
 	display: flex;
 	padding: 1rem;
@@ -101,7 +109,10 @@ layout:
   
   .card_content {
 	padding: 1rem;
-	background: linear-gradient(to bottom left, #EF8D9C 40%, #FFC39E 100%);
+	/*background: linear-gradient(to bottom left, #EF8D9C 40%, #FFC39E 100%);*/
+	background: #56ab2f;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #a8e063, #56ab2f);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #a8e063, #56ab2f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
   
   .card_title {
@@ -136,10 +147,36 @@ layout:
 body {
   font-family: "Poppins", sans-serif !important;
 }
+
+
+h1 {
+  font-family: Rockwell, Georgia, sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;
+  
+  padding: 0 .5em;
+  max-width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  font-size: 2em;
+  color: #9B5DE5;
+  
+  letter-spacing: .1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media all and (min-width:600px) {
+  h1 {
+    font-size: 5vw;
+  }
+}
+
 </style>
 {%include navegacao.html%}
 
-
+<h1>Trilhos</h1>
 <ul class="cards">
 	{% for post in site.posts %}
 	  {%include tab-post2.html %}
