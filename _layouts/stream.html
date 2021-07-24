@@ -26,6 +26,8 @@
     .gpx ul.info li { color: #666; padding: 2px; display: inline; }
     .gpx ul.info li span { color: black; }
     
+
+    .leaflet-control-layers {text-align: left;}
     
   </style>
 
@@ -89,6 +91,31 @@
    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.5.1/gpx.js"></script>-->
    <script src="/assets/js/gpx.js"></script>
     <script type="application/javascript">
+
+      var osmLink = '<a href="https://openstreetmap.org">OpenStreetMap</a>',
+          otmLink = '<a href="https://opentopomap.org/">OpenTopoMap</a>',
+          ESRILink = '<a href="https://www.esri.com/en-us/home/">ESRI</a>';
+          
+        
+      var osmUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+          osmAttrib = '&copy; ' + osmLink + ' Contributors',
+          
+          otmUrl = 'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
+          otmAttrib = '&copy; '+otmLink+' Contributors',
+          
+          ESRItopoUrl = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}',
+          ESRItopoAttrib = '&copy; '+ESRILink+' Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community',
+          
+          ESRIUrl = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+          ESRIAttrib = '&copy; '+ESRILink+' Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community';
+  
+      var osmMap = L.tileLayer(osmUrl, {attribution: osmAttrib}),
+          otmMap = L.tileLayer(otmUrl, {attribution: otmAttrib}),
+          ESRIMap = L.tileLayer(ESRIUrl, {attribution: ESRIAttrib}),
+          ESRItopoMap = L.tileLayer(ESRItopoUrl, {attribution: ESRItopoAttrib});
+
+
+
       function display_gpx(elt) {
         if (!elt) return;
 
@@ -99,12 +126,18 @@
         function _t(t) { return elt.getElementsByTagName(t)[0]; }
         function _c(c) { return elt.getElementsByClassName(c)[0]; }
 
-        var map = L.map(mapid);
-        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-          attribution: 'Map data &copy; <a href="http://www.osm.org">OpenStreetMap</a>'
-        }).addTo(map);
+        var map = L.map(mapid, {
+			    layers: [osmMap] // only add one!
+		    });
+       
+ var baseLayers = {
+			    "OSM Mapnik": osmMap,
+			    "Topography": otmMap,
+          "ESRI Imagery": ESRIMap,
+          "ESRI Topo Map" : ESRItopoMap
+		    };
 
-        var control = L.control.layers(null, null).addTo(map);
+        var control = L.control.layers(baseLayers).addTo(map);
 
         new L.GPX(url, {
           async: true,
@@ -116,8 +149,8 @@
         }).on('loaded', function(e) {
           var gpx = e.target;
           map.fitBounds(gpx.getBounds());
-          control.addOverlay(gpx, gpx.get_name());
-
+          //control.addOverlay(gpx, gpx.get_name());
+          control.addOverlay(gpx, '{{page.title}}');
           /*
            * Note: the code below relies on the fact that the demo GPX file is
            * an actual GPS track with timing and heartrate information.
