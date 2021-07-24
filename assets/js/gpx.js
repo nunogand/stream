@@ -53,10 +53,10 @@ var _DEFAULT_MARKER_OPTS = {
   wptIcons: [],
   wptIconsType: [],
   wptIconUrls : {
-    '': '/assets/map-icons/pin-icon-wpt.png',
+    '': '/assets/map-icons/person-simple-walk.svg',
   },
   wptIconTypeUrls : {
-    '': '/assets/map-icons/pin-icon-wpt.png',
+    '': '/assets/map-icons/person-simple-walk.svg',
   },
   pointMatchers: [],
   iconSize: [33, 45],
