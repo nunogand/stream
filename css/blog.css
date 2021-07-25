@@ -90,8 +90,7 @@ img {
 .cards_item {
   display: flex;
   padding: 1rem;
-  width: 100%;
-}
+  }
 
 
 @media only screen and (min-width: 600px)

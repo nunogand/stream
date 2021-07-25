@@ -1,0 +1,42 @@
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+layout:
+---
+
+<!DOCTYPE html>
+
+
+
+<head>
+	<link rel="stylesheet" href="<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">">
+    <link rel="stylesheet" href="/css/blog.css">
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+{%include navegacao.html%}
+
+<h1>Trilhos</h1>
+
+<div class="columns">
+<ul class="cards">
+	<div class="column">
+	{% for post in site.posts %}
+	  {%include tab-post2.html %}
+	  {% endfor %}
+	</div>
+
+
+	</ul>
+</div>
+
+
