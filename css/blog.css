@@ -90,9 +90,10 @@ img {
 .cards_item {
   display: flex;
   padding: 1rem;
+  justify-content:center;
   }
 
-
+/*
 @media only screen and (min-width: 600px)
 {
   .cards_item {
