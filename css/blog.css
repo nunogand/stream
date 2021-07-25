@@ -42,8 +42,10 @@ h1 {
 
 img {
   height: auto;
-  max-width: 100%;
+  max-width: 400px;
   vertical-align: middle;
+  aspect-ratio: 4/3;
+  object-fit: cover;
  }
 
 /*THE CROP PART*/
@@ -81,9 +83,43 @@ img {
   padding: 0;
 }
 
+
+
+
+
 .cards_item {
   display: flex;
   padding: 1rem;
+  width: 100%;
+}
+
+
+@media only screen and (min-width: 600px)
+{
+  .cards_item {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .cards_item {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .cards_item {
+    width: 33.3333%;
+  }
+}
+
+
+/*
+@media (max-width: 40rem)
+{
+  .cards_item {
+    width: 100%;
+  }
 }
 
 @media (min-width: 40rem) {
@@ -96,7 +132,7 @@ img {
   .cards_item {
     width: 33.3333%;
   }
-}
+}*/
 
 .card {
   background-color: white;
