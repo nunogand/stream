@@ -5,8 +5,6 @@
 
 /*@import "normalize";*/
 
-/* Font */
-@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
 
 /* Design */
 *,
@@ -16,17 +14,16 @@
 }
 
 html {
-  background-color: #ecf9ff;
+  background-color: #eeeeee;
 }
 
 body {
   color: #272727;
-  font-family: 'Quicksand', serif;
+  font-family: 'open sans', sans-serif;
   font-style: normal;
   font-weight: 400;
   letter-spacing: 0;
   padding: 1rem;
-  margin-top: 65px;
 }
 
 .main{
@@ -37,29 +34,17 @@ body {
 h1 {
     font-size: 24px;
     font-weight: 400;
-    text-align: center;
+
 }
 
 img {
   height: auto;
   max-width: 100%;
   vertical-align: middle;
-/*Nuno*/
-  aspect-ratio: 4/3;
-  object-fit: cover;
- }
-
-/*THE CROP PART
-.card_image {
-  aspect-ratio: 5 / 4;
-  overflow: hidden;
-  position: relative;
-  object-fit: scale-down;
-   }
-/* END CROP */
+}
 
 .btn {
-  color: #ffffff;
+  color: #909090;
   padding: 0.8rem;
   font-size: 14px;
   text-transform: uppercase;
@@ -68,12 +53,12 @@ img {
   display: block;
   width: 100%;
   cursor: pointer;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(90, 90, 90, 0.2);
   background: transparent;
 }
 
 .btn:hover {
-  background-color: rgba(255, 255, 255, 0.12);
+  background-color: rgba(155, 155, 155, 0.12);
 }
 
 .cards {
@@ -84,58 +69,11 @@ img {
   padding: 0;
 }
 
-
-
-
-
 .cards_item {
   display: flex;
   padding: 1rem;
-  justify-content:center;
-  }
-
-/*
-@media only screen and (min-width: 600px)
-{
-  .cards_item {
-    width: 100%;
-  }
 }
 
-@media only screen and (min-width: 768px) {
-  .cards_item {
-    width: 50%;
-  }
-}
-
-@media only screen and (min-width: 992px) {
-  .cards_item {
-    width: 33.3333%;
-  }
-}
-
-
-/*
-@media (max-width: 40rem)
-{
-  .cards_item {
-    width: 100%;
-  }
-}
-
-@media (min-width: 40rem) {
-  .cards_item {
-    width: 50%;
-  }
-}
-
-@media (min-width: 56rem) {
-  .cards_item {
-    width: 33.3333%;
-  }
-}*/
-
-/*New try*/
 @media (min-width: 40rem) {
   .cards_item {
     width: 50%;
@@ -150,6 +88,7 @@ img {
 
 .card {
   background-color: white;
+  color:#000;
   border-radius: 0.25rem;
   box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
   display: flex;
@@ -159,15 +98,11 @@ img {
 
 .card_content {
   padding: 1rem;
-  background: #56ab2f;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #a8e063, #56ab2f);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #a8e063, #56ab2f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
+/*   background: linear-gradient(to bottom left, #EF8D9C 40%, #FFC39E 100%); */
 }
 
 .card_title {
-  color: #ffffff;
+  color: #203060;
   font-size: 1.1rem;
   font-weight: 700;
   letter-spacing: 1px;
@@ -175,16 +110,22 @@ background: linear-gradient(to right, #a8e063, #56ab2f); /* W3C, IE 10+/ Edge, F
   margin: 0px;
 }
 
-
-
 .card_text {
-  color: #ffffff;
+  color: #343434;
   font-size: 0.875rem;
   line-height: 1.5;
   margin-bottom: 1.25rem;    
   font-weight: 400;
-
 }
+.made_by{
+  font-weight: 400;
+  font-size: 13px;
+  margin-top: 35px;
+  text-align: center;
+}
+
+
+
 
 svg{
   display: inline-block;
