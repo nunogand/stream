@@ -1,44 +1,51 @@
 ---
-
 ---
-
 <!DOCTYPE html>
+
+
 
 <head>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <link rel="stylesheet" href="/css/blog.css">
+
+
+    <link rel="stylesheet" href="/css/blog-bulma.css">
+
+
+
+
+
 
 </head>
 
 <body>
-<h1>Trilhos</h1>
 
-<div class="columns is is-multiline is-centered">
-
-<ul class="cards">
-{% for post in site.posts %}
-	<div class="column is-one-third">
-	
-	  {%include tab-post2.html %}
-	  
+<section class="hero is-success mb-5 has-text-centered is-medium">
+	<div class="hero-body">
+	  <p class="title">
+		Success hero
+	  </p>
+	  <p class="subtitle">
+		Success subtitle
+	  </p>
 	</div>
-
-	<div class="column is-one-third">
+  </section>
+  
+  
+  <div class="columns is-variable is-6 is-multiline">
+   
 	
-		{%include tab-post2.html %}
-		
-	  </div>
-
-	  <div class="column is-one-third">
+	{% for post in site.posts %}
+	{%include card-bulma.html %}
 	
-		{%include tab-post2.html %}
-		
-	  </div>
-
-
+	{%include card-bulma.html %}
+	{%include card-bulma.html %}
+	{%include card-bulma.html %}
+	{%include card-bulma.html %}
 	{% endfor %}
-
-	</ul>
-</div>
-
-
+	
+	<!-- extra -->
+	
+	
+	
+  </div>
+  
