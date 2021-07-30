@@ -13,13 +13,13 @@
   
   <style type="text/css">
    
-    .gpx { border: 2px #aaa solid; border-radius: 5px;
-      box-shadow: 0 0 3px 3px #ccc;
+    .gpx { border: 0; border-radius: 5px;
+      box-shadow: 0;
       margin: 1em auto; flex: 1 1 20em; max-width: 80vw;}
     .gpx header { padding: 0.5em; }
     .gpx h3 { margin: 0; padding: 0; font-weight: bold; }
     .gpx .start { font-size: smaller; color: #444; }
-    .gpx .map { border: 1px #888 solid; border-left: none; border-right: none;
+    .gpx .map { border: 0; border-left: none; border-right: none;
       max-width: 80vw; height: 500px; margin: 0; }
     .gpx footer { background: #f0f0f0; padding: 0.5em; }
     .gpx ul.info { list-style: none; margin: 0; padding: 0; font-size: smaller; }
@@ -31,7 +31,6 @@
     
   </style>
 
-{%include navegacao.html%}
 
 
 <section id="demo" class="gpx" data-gpx-source="/assets/{{page.folder}}/track.gpx" data-map-target="demo-map">
