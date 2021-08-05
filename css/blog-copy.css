@@ -67,20 +67,35 @@ img {
   list-style: none;
   margin: 0;
   padding: 0;
+  justify-content: center;
 }
 
 .cards_item {
   display: flex;
   padding: 1rem;
+  }
+/*
+@media (min-width: 43rem) {
+  .cards_item {
+    width: 50%;
+  }
 }
+*/
 
-@media (min-width: 40rem) {
+@media (min-width: 769px) {
   .cards_item {
     width: 50%;
   }
 }
 
-@media (min-width: 56rem) {
+
+/*@media (min-width: 56rem) {
+  .cards_item {
+    width: 33.3333%;
+  }
+}*/
+
+@media (min-width: 992px) {
   .cards_item {
     width: 33.3333%;
   }

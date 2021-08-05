@@ -1,7 +1,9 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
 
 /* Font */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
+/* Font */
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
+/*@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');*/
 
 html {
  background: linear-gradient(0deg, rgba(0, 0, 200, 0.2), rgba(0, 0, 200, 0));
@@ -11,11 +13,12 @@ html {
 body {
   
   color: #272727;
-  font-family: 'Noto Sans JP', sans-serif;
+  /*font-family: 'Noto Sans JP', sans-serif;*/
+  font-family: 'Quicksand', serif;
   font-style: normal;
   font-weight: 400;
   letter-spacing: 0;
-  padding: 2rem;
+  padding: 1rem;
 }
 .card {
   transition: all 0.25s ease;
@@ -86,3 +89,11 @@ svg circle {
   stroke-width: 2;
 }
 
+.card_title {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  margin: 0px;
+}
