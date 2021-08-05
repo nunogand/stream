@@ -133,9 +133,9 @@ img {
   .cards_item {
     width: 33.3333%;
   }
-}*/
+}
 
-/*New try*/
+/*New try
 @media (min-width: 40rem) {
   .cards_item {
     width: 50%;
@@ -145,6 +145,24 @@ img {
 @media (min-width: 56rem) {
   .cards_item {
     width: 33.3333%;
+  }
+}*/
+
+@media (min-width: 40rem) {
+  .cards_item {
+    width: 50%;
+  }
+}
+
+@media (min-width: 56rem) {
+  .cards_item {
+    width: 33.3333%;
+  }
+}
+
+@media (min-width: 62rem) {
+  .cards_item {
+    width: 25%;
   }
 }
 
