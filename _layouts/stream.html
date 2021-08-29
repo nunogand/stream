@@ -1,41 +1,25 @@
 {%include head.html %}
 
 
-<script
-  src="/assets/js/material-photo-gallery.min.js"></script>
-
-
-
-
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
   crossorigin=""/>
   
 <link rel="stylesheet" href="/css/stream.css" />
+<style type="text/css">
+  
+
+  .leaflet-control-layers {text-align: left;}
+  
+</style>
+
+</head>
 
 <body>
 
   
-  <style type="text/css">
-  <!--
-    /*.gpx { border: 0; border-radius: 5px;
-      box-shadow: 0;
-      margin: 1em auto; flex: 1 1 20em; max-width: 80vw;}
-    .gpx header { padding: 0.5em; }
-    .gpx h3 { margin: 0; padding: 0; font-weight: bold; }
-    .gpx .start { font-size: smaller; color: #444; }
-    .gpx .map { border: 0; border-left: none; border-right: none;
-      max-width: 80vw; height: 500px; margin: 0; }
-    .gpx footer { background: #f0f0f0; padding: 0.5em; }
-    .gpx ul.info { list-style: none; margin: 0; padding: 0; font-size: smaller; }
-    .gpx ul.info li { color: #666; padding: 2px; display: inline; }
-    .gpx ul.info li span { color: black; }*/
-  -->     
-
-    .leaflet-control-layers {text-align: left;}
-    
-  </style>
+ 
 
 
 
@@ -87,9 +71,9 @@
 				var gallery = new MaterialPhotoGallery(elem);
 			});
 		</script>
-
+<script src="/assets/js/material-photo-gallery.min.js"></script>
 <script src="/assets/js/leaflet.js"></script>
-<script src="/assets/js/gpx.js"></script>-->
+<script src="/assets/js/gpx.js"></script>
     <script type="application/javascript">
 
       var osmLink = '<a href="https://openstreetmap.org">OpenStreetMap</a>',
@@ -179,3 +163,5 @@
 
 
 </body>
+
+</html>
